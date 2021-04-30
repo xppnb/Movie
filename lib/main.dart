@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Page/FirstBody.dart';
+import 'Page/ChooseMoviePage.dart';
 
 
 void main() => runApp(MyApp());

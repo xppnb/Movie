@@ -2,6 +2,7 @@ import 'dart:async';
 
 //import 'dart:html';
 import 'package:china_model_b/HttpService/HttpService.dart';
+import 'package:china_model_b/Page/SeatSelectionPage.dart';
 import 'package:china_model_b/Utils/ChannelAndroid.dart';
 import 'package:china_model_b/Utils/Constart.dart';
 import 'package:flutter/material.dart';
@@ -311,7 +312,11 @@ class _HomeWidgetState extends State<HomeWidget>
                       width: 35,
                       height: 25,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return SeatSelectionPage();
+                          }));
+                        },
                         child: Text(
                           "购票",
                           style: movieStyle5,
