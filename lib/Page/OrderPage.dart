@@ -138,7 +138,7 @@ class _OrderPageBodyState extends State<OrderPageBody> {
                 ((orderData.movieData["visual"]) as String).contains("3D")
                     ? Container(
                         width: 230,
-                        height: 90,
+                        height: 80,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           border: Border.all(width: 1),
