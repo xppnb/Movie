@@ -3,9 +3,10 @@
 
 
 
+import 'package:flutter/services.dart';
 
-import 'package:china_model_b/Utils/Constart.dart';
 
+const methodChannel = MethodChannel("android");
 Future ChannelAndroid(String method,{String argument}) async{
   if(argument == null){
     return methodChannel.invokeMethod(method);

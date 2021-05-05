@@ -1,10 +1,12 @@
 import 'dart:async';
 
 //import 'dart:html';
+import 'package:china_model_b/DataBean/SeatBean/SeatData.dart';
 import 'package:china_model_b/HttpService/HttpService.dart';
 import 'package:china_model_b/Page/SeatSelectionPage.dart';
 import 'package:china_model_b/Utils/ChannelAndroid.dart';
 import 'package:china_model_b/Utils/Constart.dart';
+import 'package:china_model_b/Utils/NavigatorUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -69,6 +71,8 @@ class _HomeWidgetState extends State<HomeWidget>
   var plot;
   TabController tabController;
 
+  ///电影日期
+  String movieTime;
   @override
   void initState() {
     // TODO: implement initState
@@ -195,6 +199,8 @@ class _HomeWidgetState extends State<HomeWidget>
     var shopData = homeData["shop"] as List;
     // print(homeData["country"]);
     // print(homeData["shop"][0]["time"][0]);
+    ///赋值第一次电影日期
+    movieTime = shopData[0]["date"].toString();
     return Container(
         child: Column(
       children: [
@@ -211,6 +217,9 @@ class _HomeWidgetState extends State<HomeWidget>
           indicatorSize: TabBarIndicatorSize.label,
           isScrollable: true,
           physics: BouncingScrollPhysics(),
+          onTap: (index){
+            movieTime = shopData[index]["date"];
+          },
         ),
         Container(
           width: 500,
@@ -244,7 +253,7 @@ class _HomeWidgetState extends State<HomeWidget>
         width: 500,
         child: ListView.builder(
           itemBuilder: (context, index) {
-            return buyTicketListView(index, movieTimeList);
+            return buyTicketListView(index, movieTimeList[index]);
           },
           itemCount: movieTimeList.length,
           physics: BouncingScrollPhysics(),
@@ -253,7 +262,7 @@ class _HomeWidgetState extends State<HomeWidget>
 
   Widget buyTicketListView(
     int index,
-    List<dynamic> movieTimeList,
+    Map movieData,
   ) {
     return Card(
       elevation: 0.2,
@@ -264,11 +273,11 @@ class _HomeWidgetState extends State<HomeWidget>
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(movieTimeList[index]["startTime"].toString()),
+                Text(movieData["startTime"].toString()),
                 SizedBox(
                   height: 5,
                 ),
-                Text(movieTimeList[index]["lastTime"].toString() + "散场",
+                Text(movieData["lastTime"].toString() + "散场",
                     style: movieStyle),
               ],
             ),
@@ -281,14 +290,14 @@ class _HomeWidgetState extends State<HomeWidget>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    movieTimeList[index]["visual"],
+                    movieData["visual"],
                     style: movieStyle2,
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
-                    movieTimeList[index]["office"],
+                    movieData["office"],
                     style: movieStyle,
                   ),
                 ],
@@ -304,7 +313,7 @@ class _HomeWidgetState extends State<HomeWidget>
                       width: 50,
                       alignment: Alignment.center,
                       child: Text(
-                        "¥${movieTimeList[index]["price"]}",
+                        "¥${movieData["price"]}",
                         style: movieStyle4,
                       ),
                     ),
@@ -313,8 +322,9 @@ class _HomeWidgetState extends State<HomeWidget>
                       height: 25,
                       child: InkWell(
                         onTap: () {
+                          //NavigatorUtils.push(context, SeatSelectionPage());
                           Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return SeatSelectionPage();
+                            return SeatSelectionPage(seatData: SeatData(homeData,movieTime,movieData),);
                           }));
                         },
                         child: Text(

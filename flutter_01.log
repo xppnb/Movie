@@ -1,0 +1,68 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --quiet assemble --depfile F:\Android Project\Movie\build\app\intermediates\flutter\debug/flutter_build.d --output F:\Android Project\Movie\build\app\intermediates\flutter\debug -dTargetFile=lib/main.dart -dTargetPlatform=android -dBuildMode=debug -dTrackWidgetCreation=true debug_android_application
+
+## exception
+
+FileSystemException: FileSystemException: Cannot delete file, path = 'F:\Android Project\Movie\build\app\intermediates\flutter\debug\flutter_assets\kernel_blob.bin' (OS Error: 拒绝访问。
+, errno = 5)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:635:7)
+#1      _File._deleteSync (dart:io/file_impl.dart:298:5)
+#2      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:458:47)
+#3      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:72:16)
+#4      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:72:16)
+#5      FlutterBuildSystem.trackSharedBuildDirectory (package:flutter_tools/src/build_system/build_system.dart:696:26)
+#6      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:584:5)
+<asynchronous suspension>
+#7      AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:221:58)
+#8      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:860:18)
+#9      _rootRunUnary (dart:async/zone.dart:1198:47)
+#10     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#11     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#12     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#13     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#14     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#15     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#16     _rootRun (dart:async/zone.dart:1190:13)
+#17     _CustomZone.run (dart:async/zone.dart:1093:19)
+#18     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#19     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#20     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#21     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#22     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#23     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.20.3, on Microsoft Windows [Version 10.0.18363.1379], locale zh-CN)
+    • Flutter version 1.20.3 at D:\flutter_windows_1.20.3-stable\flutter
+    • Framework revision 216dee60c0 (8 months ago), 2020-09-01 12:24:47 -0700
+    • Engine revision d1bc06f032
+    • Dart version 2.9.2
+    • Pub download mirror https://pub.flutter-io.cn
+    • Flutter download mirror https://storage.flutter-io.cn
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at C:\Users\Administrator\AppData\Local\Android\Sdk
+    • Platform android-30, build-tools 30.0.3
+    • ANDROID_HOME = C:\Users\Administrator\AppData\Local\Android\Sdk
+    • Java binary at: D:\Program Files\Java8\bin\java
+    • Java version Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
+    • All Android licenses accepted.
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[✓] Connected device (1 available)
+    • Android SDK built for x86 (mobile) • emulator-5554 • android-x86 • Android 10 (API 29) (emulator)
+
+! Doctor found issues in 1 category.
+```
