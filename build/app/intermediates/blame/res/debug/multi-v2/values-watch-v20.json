@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Android Project\\Movie\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "/Users/xupeng/gitbub/Movie/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\56a772d0e147a2bfda48e96bff655148\\appcompat-1.1.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "/Users/xupeng/.gradle/caches/transforms-2/files-2.1/56a772d0e147a2bfda48e96bff655148/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

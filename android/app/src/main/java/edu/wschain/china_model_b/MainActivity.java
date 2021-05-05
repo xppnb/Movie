@@ -1,22 +1,29 @@
 package edu.wschain.china_model_b;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.drawable.Icon;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.BoringLayout;
+import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -33,6 +40,7 @@ import static android.provider.Settings.ACTION_SETTINGS;
 
 public class MainActivity extends FlutterActivity {
 
+    private static final String TAG = "Main";
     private List<String> mPermissionList = new ArrayList<>();
     private String[] permission = new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.USE_FINGERPRINT};
     //    private List<String> permissionList = [Manifest.permission.CALL_PHONE];
@@ -41,6 +49,8 @@ public class MainActivity extends FlutterActivity {
     private String methodName = "";
     private KeyguardManager keyguardManager;
     private FingerprintManager fingerprintManager;
+    private AlertDialog.Builder alertBuilder;
+    private AlertDialog alertDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,28 +76,78 @@ public class MainActivity extends FlutterActivity {
                         callPhone();
                         break;
                     case "finger":
-                        supportFingerPrint();
+                        getPrinter();
                         break;
                 }
             }
         });
     }
 
+
+    //判断指纹
+    private void getPrinter() {
+        if (supportFingerPrint()) {
+            if (Build.VERSION.SDK_INT > 23) {
+                Toast.makeText(this, "请输入指纹", Toast.LENGTH_SHORT).show();
+
+                showAlertDialog("输入指纹","请输入指纹",false);
+
+                fingerprintManager.authenticate(null, null, 0, new FingerprintManager.AuthenticationCallback() {
+                    @Override
+                    public void onAuthenticationError(int errorCode, CharSequence errString) {
+                        super.onAuthenticationError(errorCode, errString);
+                        Toast.makeText(MainActivity.this, errString, Toast.LENGTH_SHORT).show();
+
+                        Log.i(TAG, "errorCode: " + errorCode);
+                        Log.i(TAG, "errString: " + errString);
+
+                        alertDialog.dismiss();
+
+                    }
+
+                    @Override
+                    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {
+                        super.onAuthenticationHelp(helpCode, helpString);
+                        Toast.makeText(MainActivity.this, helpString, Toast.LENGTH_SHORT).show();
+                        Log.i(TAG, "helpCode: " + helpCode);
+                        Log.i(TAG, "helpString: " + helpString);
+                    }
+
+                    @Override
+                    public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
+                        super.onAuthenticationSucceeded(result);
+                        Toast.makeText(MainActivity.this, "指纹认证成功", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onAuthenticationFailed() {
+                        super.onAuthenticationFailed();
+                        Toast.makeText(MainActivity.this, "认证失败，请再试一次", Toast.LENGTH_SHORT).show();
+                    }
+                }, null);
+            }
+        }
+    }
+
+
     private boolean supportFingerPrint() {
-        if(Build.VERSION.SDK_INT < 23){
+        if (Build.VERSION.SDK_INT < 23) {
             Toast.makeText(this, "您的版本过低，不支持指纹解锁", Toast.LENGTH_SHORT).show();
-            return  false;
-        }else{
+            return false;
+        } else {
             keyguardManager = getSystemService(KeyguardManager.class);
             fingerprintManager = getSystemService(FingerprintManager.class);
-            if(!fingerprintManager.isHardwareDetected()){
+            if (!fingerprintManager.isHardwareDetected()) {
                 Toast.makeText(this, "您的手机不支持指纹", Toast.LENGTH_SHORT).show();
-                return  false;
-            }else if(!fingerprintManager.hasEnrolledFingerprints()){
+                return false;
+            } else if (!fingerprintManager.hasEnrolledFingerprints()) {
                 Toast.makeText(this, "您至少需要在系统设置中添加一个指纹", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(ACTION_SETTINGS);
-                startActivity(intent);
+
+                showAlertDialog("提示","是否需要跳转到设置界面",true);
+
+                return false;
 
 //                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
 //
@@ -97,7 +157,38 @@ public class MainActivity extends FlutterActivity {
 //                startActivity(intent);
             }
         }
-        return false;
+        return true;
+    }
+
+
+    //
+    private void showAlertDialog(String title, String message, boolean isNeedButton) {
+        alertBuilder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.LaunchTheme3));
+        alertBuilder.setTitle(title).setMessage(message).setIcon(R.drawable.ic_baseline_fingerprint_24);
+        if (isNeedButton) {
+            alertBuilder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    intentSettings();
+//                        dialog.cancel();
+                }
+            });
+            alertBuilder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+        }
+        alertBuilder.create();
+        alertDialog = alertBuilder.show();
+    }
+
+
+    //跳转到设置界面
+    private void intentSettings() {
+        Intent intent = new Intent(ACTION_SETTINGS);
+        startActivity(intent);
     }
 
 

@@ -599,7 +599,10 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable ic_baseline_fingerprint_24
 drawable ic_launcher
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable launch_background
 drawable launch_background2
 drawable notification_action_background
@@ -836,6 +839,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap home
 mipmap ic_launcher
+mipmap ic_launcher_round
 raw banner
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1029,6 +1033,7 @@ style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style LaunchTheme
 style LaunchTheme2
+style LaunchTheme3
 style NormalTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
