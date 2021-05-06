@@ -207,7 +207,7 @@ class _SeatSelectionBodyState extends State<SeatSelectionBody> {
               maxScale: 1.2,
               minScale: 0.1,
               boundaryMargin: EdgeInsets.all(40),
-              panEnabled: false,
+              panEnabled: true,
               onInteractionStart: (ScaleStartDetails details) {
                 print('onInteractionStart----' + details.toString());
                 newInteractiveViewerKey.currentState.onScaleStart(details);
