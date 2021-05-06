@@ -14,6 +14,7 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CancellationSignal;
 import android.provider.Settings;
 import android.text.BoringLayout;
 import android.util.Log;
@@ -51,6 +52,7 @@ public class MainActivity extends FlutterActivity {
     private FingerprintManager fingerprintManager;
     private AlertDialog.Builder alertBuilder;
     private AlertDialog alertDialog;
+    private CancellationSignal cancellationSignal;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,10 +91,10 @@ public class MainActivity extends FlutterActivity {
         if (supportFingerPrint()) {
             if (Build.VERSION.SDK_INT > 23) {
                 Toast.makeText(this, "请输入指纹", Toast.LENGTH_SHORT).show();
-
+                cancellationSignal = new CancellationSignal();
                 showAlertDialog("输入指纹","请输入指纹",false);
 
-                fingerprintManager.authenticate(null, null, 0, new FingerprintManager.AuthenticationCallback() {
+                fingerprintManager.authenticate(null, cancellationSignal, 0, new FingerprintManager.AuthenticationCallback() {
                     @Override
                     public void onAuthenticationError(int errorCode, CharSequence errString) {
                         super.onAuthenticationError(errorCode, errString);
@@ -126,6 +128,7 @@ public class MainActivity extends FlutterActivity {
                         Toast.makeText(MainActivity.this, "认证失败，请再试一次", Toast.LENGTH_SHORT).show();
                     }
                 }, null);
+
             }
         }
     }
@@ -182,6 +185,15 @@ public class MainActivity extends FlutterActivity {
         }
         alertBuilder.create();
         alertDialog = alertBuilder.show();
+        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                System.out.println("取消了");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    cancellationSignal.cancel();
+                }
+            }
+        });
     }
 
 
