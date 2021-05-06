@@ -85,7 +85,7 @@ public class MainActivity extends FlutterActivity {
         if (supportFingerPrint()) {
             if (Build.VERSION.SDK_INT > 23) {
                 Toast.makeText(this, "请输入指纹", Toast.LENGTH_SHORT).show();
-                cancellationSignal = new CancellationSignal();
+                cancellationSignal = new CancellationSignal(); //取消监听
                 showAlertDialog("输入指纹","请输入指纹",false);
 
                 fingerprintManager.authenticate(null, cancellationSignal, 0, new FingerprintManager.AuthenticationCallback() {
@@ -178,6 +178,9 @@ public class MainActivity extends FlutterActivity {
         }
         alertBuilder.create();
         alertDialog = alertBuilder.show();
+
+
+        //监听弹窗没有的时候
         alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
