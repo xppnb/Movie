@@ -61,7 +61,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/xupe
 	android:label
 		ADDED from /Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:15:9-30
 	android:icon
-		ADDED from /Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:16:9-43
+		ADDED from /Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:16:9-61
 	android:name
 		ADDED from /Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:14:9-57
 activity#edu.wschain.china_model_b.MainActivity

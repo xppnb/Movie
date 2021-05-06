@@ -27,7 +27,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_baseline_movie_filter_24"
         android:label="Movie" >
         <activity
             android:name="edu.wschain.china_model_b.MainActivity"

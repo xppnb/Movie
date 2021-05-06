@@ -36,8 +36,8 @@
 28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 28-->[androidx.core:core:1.1.0] /Users/xupeng/.gradle/caches/transforms-2/files-2.1/6b399c2363bb098ebde1725d903cbda0/core-1.1.0/AndroidManifest.xml:24:18-86
 29        android:debuggable="true"
-30        android:icon="@mipmap/ic_launcher"
-30-->/Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:16:9-43
+30        android:icon="@drawable/ic_baseline_movie_filter_24"
+30-->/Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:16:9-61
 31        android:label="Movie" >
 31-->/Users/xupeng/gitbub/Movie/android/app/src/main/AndroidManifest.xml:15:9-30
 32        <activity
