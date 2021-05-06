@@ -10,29 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5b5b0f9-2686-4f78-ac96-16bb1800a8e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/flutter_build/cb7cabb88257a64b984d409eefb46fc9/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/wschain/china_model_b/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/wschain/china_model_b/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/libs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/flutter/debug/libs.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/1N22AehZXWGi4nU6_2RzlT8kyvU=" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/incremental/packageDebug/tmp/debug/zip-cache/1N22AehZXWGi4nU6_2RzlT8kyvU=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/instant_app_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/instant_app_manifest/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,21 +120,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2518" height="424" key="GridCell.Tab.0.bottom" timestamp="1620293555538">
+    <state width="2518" height="217" key="GridCell.Tab.0.bottom" timestamp="1620294186568">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.bottom/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620293555538" />
-    <state width="2518" height="424" key="GridCell.Tab.0.center" timestamp="1620293555537">
+    <state width="2518" height="217" key="GridCell.Tab.0.bottom/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620294186568" />
+    <state width="2518" height="424" key="GridCell.Tab.0.bottom/2560.343.1920.1055/0.25.2560.1317@0.25.2560.1317" timestamp="1620294090710" />
+    <state width="2518" height="217" key="GridCell.Tab.0.center" timestamp="1620294186567">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.center/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620293555537" />
-    <state width="2518" height="424" key="GridCell.Tab.0.left" timestamp="1620293555536">
+    <state width="2518" height="217" key="GridCell.Tab.0.center/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620294186567" />
+    <state width="2518" height="424" key="GridCell.Tab.0.center/2560.343.1920.1055/0.25.2560.1317@0.25.2560.1317" timestamp="1620294090709" />
+    <state width="2518" height="217" key="GridCell.Tab.0.left" timestamp="1620294186566">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.left/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620293555536" />
-    <state width="2518" height="424" key="GridCell.Tab.0.right" timestamp="1620293555537">
+    <state width="2518" height="217" key="GridCell.Tab.0.left/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620294186566" />
+    <state width="2518" height="424" key="GridCell.Tab.0.left/2560.343.1920.1055/0.25.2560.1317@0.25.2560.1317" timestamp="1620294090708" />
+    <state width="2518" height="217" key="GridCell.Tab.0.right" timestamp="1620294186567">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="424" key="GridCell.Tab.0.right/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620293555537" />
+    <state width="2518" height="217" key="GridCell.Tab.0.right/2560.318.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1620294186567" />
+    <state width="2518" height="424" key="GridCell.Tab.0.right/2560.343.1920.1055/0.25.2560.1317@0.25.2560.1317" timestamp="1620294090709" />
   </component>
 </project>

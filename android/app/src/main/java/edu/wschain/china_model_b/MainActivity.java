@@ -1,34 +1,29 @@
 package edu.wschain.china_model_b;
 
 import android.Manifest;
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.KeyguardManager;
-import android.content.ComponentName;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.drawable.Icon;
+
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
-import android.provider.Settings;
-import android.text.BoringLayout;
+
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import java.security.Permissions;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +43,6 @@ public class MainActivity extends FlutterActivity {
     private final int mRequestCode = 100;//权限请求码
     private boolean isPermission = false;
     private String methodName = "";
-    private KeyguardManager keyguardManager;
     private FingerprintManager fingerprintManager;
     private AlertDialog.Builder alertBuilder;
     private AlertDialog alertDialog;
@@ -139,7 +133,6 @@ public class MainActivity extends FlutterActivity {
             Toast.makeText(this, "您的版本过低，不支持指纹解锁", Toast.LENGTH_SHORT).show();
             return false;
         } else {
-            keyguardManager = getSystemService(KeyguardManager.class);
             fingerprintManager = getSystemService(FingerprintManager.class);
             if (!fingerprintManager.isHardwareDetected()) {
                 Toast.makeText(this, "您的手机不支持指纹", Toast.LENGTH_SHORT).show();
